@@ -1,70 +1,28 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./style.css";
+import Navbar from "./Navbar";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Courses from "./pages/Courses";
+import About from "./pages/About";
+
 
 function App() {
   const [courses, setCourses] = useState([]);
-  const [form, setForm] = useState({ name: "", description: "", subject: "", credits: "" });
-
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.id]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setCourses([...courses, form]);
-    setForm({ name: "", description: "", subject: "", credits: "" });
-  };
 
   return (
-    <div className="background">
-      <h1>Course Management - Xaviers School for the Gifted</h1>
+    <>
+      <Navbar />
 
-      <h2>Add a Course</h2>
-      <form id="courseForm" onSubmit={handleSubmit}>
-        <input
-          id="name"
-          placeholder="Course Name"
-          value={form.name}
-          onChange={handleChange}
-          required
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route 
+          path="/courses" 
+          element={<Courses courses={courses} setCourses={setCourses} />} 
         />
-        <textarea
-          id="description"
-          placeholder="Description"
-          value={form.description}
-          onChange={handleChange}
-          required
-        ></textarea>
-        <input
-          id="subject"
-          placeholder="Subject Area"
-          value={form.subject}
-          onChange={handleChange}
-          required
-        />
-        <input
-          id="credits"
-          type="number"
-          placeholder="Credits"
-          value={form.credits}
-          onChange={handleChange}
-          required
-        />
-        <button type="submit">Add Course</button>
-      </form>
-
-      <h2>All Courses</h2>
-      <div id="courses">
-        {courses.map((course, index) => (
-          <div key={index} className="course">
-            <h3>{course.name}</h3>
-            <p>{course.description}</p>
-            <p><strong>Subject:</strong> {course.subject}</p>
-            <p><strong>Credits:</strong> {course.credits}</p>
-          </div>
-        ))}
-      </div>
-    </div>
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </>
   );
 }
 
