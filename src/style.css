@@ -10,7 +10,8 @@ body::before {
   z-index: -1;
 }
 body {
-  font-family: 'Georgia', serif;
+  font-family: 'Wolverine','Georgia', serif;
+  src: url("./assets/fonts/Wolverine.ttf");
   margin: 0;
   padding: 40px;
   text-align: center;
@@ -95,4 +96,12 @@ input:focus, textarea:focus {
 .navLinks a:hover {
   text-shadow: 0 0 8px #ffd700;
 }
+
+@font-face {
+  font-family: "Wolverine";
+  src: url("./assets/fonts/Wolverine.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 
