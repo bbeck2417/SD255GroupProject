@@ -37,7 +37,7 @@ body {
 
 input, textarea {
   display: block;
-  width: 80%;
+  width: 40%;
   margin: 0 auto 15px auto;
   padding: 8px;
 
@@ -95,3 +95,4 @@ input:focus, textarea:focus {
 .navLinks a:hover {
   text-shadow: 0 0 8px #ffd700;
 }
+
