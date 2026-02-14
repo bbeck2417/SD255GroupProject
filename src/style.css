@@ -77,4 +77,21 @@ input:focus, textarea:focus {
 .navbar a:hover {
   color: white;
   text-shadow: 0 0 8px gold;
+
+}
+.navLinks {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.navLinks a{ 
+  color: #ffd700;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.navLinks a:hover {
+  text-shadow: 0 0 8px #ffd700;
 }
